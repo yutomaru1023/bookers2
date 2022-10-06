@@ -8,16 +8,20 @@ class BooksController < ApplicationController
     @book.user_id = current_user.id
     @book.save
     redirect_to books_path
-  end  
+  end
+
   def index
+    @user = current_user
+    @book = Book.all
   end
 
   def show
   end
-  
+
   private
 
   def book_params
-    params.require(:book).permit(:title, :body,)
+    params.require(:book).permit(:title, :body, :profile_image)
   end
 end
+
