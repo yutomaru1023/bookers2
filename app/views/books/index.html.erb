@@ -30,20 +30,38 @@
           <%= f.text_field :title %>
       <h4>Opinion</h4>
           <%= f.text_area :body %>
-
   <p>
     <input type="submit" name="commit" value="Create Book" class="btn btn-success" data-disable-with="Create Book">
   </p>
 <% end %>
-    </div>
+    
   </div>
-</div>
 
-<h1>Books</h1>
-<%= @book.each do |book| %>
-<div>
-  <p>Title：<%= book.title %></p>
-  <p>Opinion：<%= book.body%></p>
-</div>
-<% end %>
 
+<div class="col-md-8 offset-md-1">
+ <h2>Books</h2>
+ 
+  <table class="table table-hover table-inverse">
+    <thead>
+      <tr>
+       <th></th>
+       <th>Title</th>
+       <th>Opinion</th>
+       <th colspan="3"></th>
+      </tr>
+    </thead>
+ 
+    <tbody>
+      <%= @book.each do |book| %>
+       <tr>
+         <td></td>
+         <td><%= book.title %></td>
+         <td><%= book.body %></td>
+       </tr>
+      <% end %>
+    </tbody>
+  </table>
+   
+   </div>
+ </div> 
+</div>
